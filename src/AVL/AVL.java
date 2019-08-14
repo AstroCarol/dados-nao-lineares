@@ -67,12 +67,31 @@ public class AVL {
         }
     }
 
-    public void AttFB( No newno, int action){
-        No local = new No(newno, newno.getIndex());
-        local = newno;
+    public void AttFB(No son, int action){
+        No father = new No(son, son.getIndex());
+        father = son.getFather();
         boolean stop = false;
         int left_right_son = 0;
-        while (local != null && !stop && local.getFather() != null){
+
+        while (father.getFather() != null && !stop){
+            //momentos de desespero: checa qual o lado do filho
+            if (son.getIndex() < father.getIndex())
+                father.setFb(father.getFB()+(1*action));
+            else
+                father.setFb(father.getFB()+(-1*action));
+
+            father = father.getFather();
+
+            if (father.getFB() == 0)
+                stop = true;
+
+            if (father.getFB() < -1 )
+                left_r(father);
+            else if (father.getFB() > 1)
+                right_r(father);
+        }
+
+        /*while (local != null && !stop && local.getFather() != null){
             No father = local.getFather();
             if (this.getCompareto != compare(local.getIndex())){
                 father.getIndex();
@@ -104,10 +123,17 @@ public class AVL {
                     stop = true;
             }
             local = local.getFather();
-        }
+        }*/
     }
 
-    public No balance(No no, int son, int action){
+    private void right_r(No father) {
+    }
+
+    private void left_r(No father) {
+    }
+
+
+    /*public No balance(No no, int son, int action){
         No n = new No(no, son);
         No ret = new No(no, son);
 
@@ -151,5 +177,5 @@ public class AVL {
 
     public void Math{
 
-    }
+    }*/
 }

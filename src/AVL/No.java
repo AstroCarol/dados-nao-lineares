@@ -6,6 +6,7 @@ public class No {
     private No left;
     private No right;
     private int fb;
+    private int compareto;
 
     public No(No father, int index){
         this.father = father;
@@ -56,6 +57,12 @@ public class No {
 
     public void setFb(int fb) {
         this.fb = fb;
+    }
+
+    public int getCompareto() {return compareto;}
+
+    public void setCompareto(int compareto) {
+        this.compareto = compareto;
     }
 
     //Check if the No is root

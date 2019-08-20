@@ -75,10 +75,19 @@ public class AVL {
 
         while (father.getFather() != null && !stop){
             //momentos de desespero: checa qual o lado do filho
-            if (son.getIndex() < father.getIndex())
-                father.setFb(father.getFB()+(1*action));
-            else
-                father.setFb(father.getFB()+(-1*action));
+
+            if (action == 0) {
+                if (son.getIndex() < father.getIndex())
+                    father.setFb(father.getFB() + (1 * action));
+                else
+                    father.setFb(father.getFB() + (-1 * action));
+            }
+            else {
+                if (son.getIndex() < father.getIndex())
+                    father.setFb(father.getFB() + (-1 * action));
+                else
+                    father.setFb(father.getFB() + (1 * action));
+            }
 
             father = father.getFather();
 
@@ -93,9 +102,36 @@ public class AVL {
     }
 
     private void right_r(No father) {
-        
+        No B = father;
+        No A = father.getLeft();
+        int fb_a_novo, fb_b_novo = 0;
+
+        B.setLeft(A.getRight());
+        A.setRight(A.getFather());
+        A.setFather(B.getFather());
+        B.setFather(A);
+
+        fb_b_novo = B.getFB() - 1 - Math.max(A.getFB(), 0);
+        fb_a_novo = A.getFB() - 1 + Math.min(fb_b_novo, 0);
+
+        A.setFb(fb_a_novo);
+        B.setFb(fb_b_novo);
     }
 
     private void left_r(No father) {
+        No B = father;
+        No A = father.getLeft();
+        int fb_a_novo, fb_b_novo = 0;
+
+        B.setRight(A.getLeft());
+        A.setLeft(A.getFather());
+        A.setFather(B.getFather());
+        B.setFather(A);
+
+        fb_b_novo = B.getFB() + 1 - Math.min(A.getFB(), 0);
+        fb_a_novo = A.getFB() + 1 + Math.max(fb_b_novo, 0);
+
+        A.setFb(fb_a_novo);
+        B.setFb(fb_b_novo);
     }
 }

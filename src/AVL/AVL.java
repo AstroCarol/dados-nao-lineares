@@ -90,92 +90,12 @@ public class AVL {
             else if (father.getFB() > 1)
                 right_r(father);
         }
-
-        /*while (local != null && !stop && local.getFather() != null){
-            No father = local.getFather();
-            if (this.getCompareto != compare(local.getIndex())){
-                father.getIndex();
-                father.setFb(father.getFB()+(-1 * action));
-                left_right_son = 1;
-            }
-            else {
-                father.setFb(father.getFB()+(+1 * action));
-                left_right_son = -1;
-            }
-
-            No newlocal = balance(local, left_right_son, action);
-
-            if (local != newlocal) {
-                local = newlocal;
-                continue;
-            }
-
-            father = local.getFather();
-
-            if (father == null){
-                stop = true;
-                this.setRoot(local);
-            }
-            else{
-                if (father.getFB() == 0 && action == 1)
-                    stop = true;
-                if (father.getFB() != 0 && action == -1)
-                    stop = true;
-            }
-            local = local.getFather();
-        }*/
     }
 
     private void right_r(No father) {
+        
     }
 
     private void left_r(No father) {
     }
-
-
-    /*public No balance(No no, int son, int action){
-        No n = new No(no, son);
-        No ret = new No(no, son);
-
-        n = no.getFather();
-        int fb = 0;
-        if (no.getFB() <= 1 && no.getFB() >= -1){
-            //Decidir o tipo de rotação que vai ser feita
-        }
-        return no;
-    }
-
-    public No left_r(No b, int son){
-        No a = b.getRight();
-        a.setFather(b.getFather());
-        if (b.getFather() != null){
-            if (son == 1)
-                b.getFather().setRight(a);
-            else
-                b.getFather().setLeft(a);
-        }
-
-        b.getFather();
-        b.setRight(a.getLeft());
-
-        if (a.getLeft() != null){
-            a.getLeft().setFather(b);
-            a.setLeft(b);
-        }
-
-        int newBal = b.getFB() + 1 - Math.min(a.getFB(), 0);
-        newBal = a.getFB() + 1 + Math.max(newBal, 0);
-
-        b.setFb(newBal);
-        a.setFb(newBal);
-        return a;
-    }
-
-    public void compare(int index){
-
-    }
-
-    public void Math{
-
-    }*/
 }

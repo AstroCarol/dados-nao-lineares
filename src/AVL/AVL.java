@@ -36,6 +36,23 @@ public class AVL {
         return n;
     }
 
+    public void remove(No no){
+        if(no.type() == 0) {
+            if (no.getIndex() > no.getFather().getIndex()) {
+                no.getFather().setRight(null);
+                no.setFather(null);
+            } else {
+                no.getFather().setLeft(null);
+                no.setFather(null);
+            }
+        }
+        else {
+
+        }
+
+
+    }
+
     //Functions for searching some No
     public No search(int index){
         return searching(root, index);
@@ -65,6 +82,15 @@ public class AVL {
             else
                 return father(n.getRight(), index);
         }
+    }
+
+    public No successor(No no){
+        if (no.getRight().getLeft() == null)
+            return no.getRight();
+        else if (no.getRight().getLeft() != null)
+            return successor(no.getRight().getLeft());
+        else
+            return no;
     }
 
     public void AttFB(No son, int action){

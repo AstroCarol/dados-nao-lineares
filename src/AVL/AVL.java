@@ -109,12 +109,14 @@ public class AVL {
             else
                 son.getFather().setFb(son.getFather().getFB() + (-1 * action));
 
-            if (son.getFather().getFB() < -1 )
+            if (son.getFather().getFB() < -1 ) {
+                System.out.println("esqueda");
                 left_r(son.getFather());
+                }
             else if (son.getFather().getFB() > 1)
                 right_r(son.getFather());
 
-            son = son.getFather();
+            //son = son.getFather();
 
             if (son.getFB() == 0)
                 stop = true;

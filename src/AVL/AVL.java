@@ -1,9 +1,12 @@
 package AVL;
 
+import java.util.ArrayList;
+
 public class AVL {
 
     //First No is null
     private No root;
+    ArrayList<No> tree;
 
     //Get and Set of Root
     public No getRoot(){
@@ -146,7 +149,7 @@ public class AVL {
 
     private void left_r(No father) {
         No B = father;
-        No A = father.getLeft();
+        No A = father.getRight();
         int fb_a_novo, fb_b_novo = 0;
 
         B.setRight(A.getLeft());
@@ -159,5 +162,35 @@ public class AVL {
 
         A.setFb(fb_a_novo);
         B.setFb(fb_b_novo);
+    }
+
+    public void mostrarArvore(No root){
+
+        No aux;
+
+        tree = inOrder(root, true);
+        String arvore = " ";
+        String [][] tree = new String [height(root)+1][tree.size()];
+
+        for (int i=0; i<tree.size(); i++){
+            aux = tree.get(i);
+            tree[depth(aux)][i] = Integer.toString(aux.getElemento());
+        }
+
+        for (int i=0; i<height(root)+1; i++){
+            for (int k=0; k<tree.size(); k++){
+                if (tree[i][k]==null){
+                    arvore+="    ";
+                } else {
+                    arvore+=tree[i][k];
+                    arvore+="    ";
+                }
+            }
+            arvore+="\n";
+        }
+
+        System.out.println(arvore);
+//
+//		return arvore;
     }
 }

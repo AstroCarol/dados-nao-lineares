@@ -35,7 +35,7 @@ public class AVL {
         else
             aux.setRight(n);
 
-        AttFB(n, 0);
+        AttFB(n, 1);
         return n;
     }
 
@@ -97,36 +97,27 @@ public class AVL {
     }
 
     public void AttFB(No son, int action){
-        No father = new No(son, son.getIndex());
-        father = son.getFather();
+        //No father = new No(son, son.getIndex());
         boolean stop = false;
         int left_right_son = 0;
 
-        while (father.getFather() != null && !stop){
+        while (son.getFather() != null && !stop ){
             //momentos de desespero: checa qual o lado do filho
 
-            if (action == 0) {
-                if (son.getIndex() < father.getIndex())
-                    father.setFb(father.getFB() + (1 * action));
-                else
-                    father.setFb(father.getFB() + (-1 * action));
-            }
-            else {
-                if (son.getIndex() < father.getIndex())
-                    father.setFb(father.getFB() + (-1 * action));
-                else
-                    father.setFb(father.getFB() + (1 * action));
-            }
+            if (son.getIndex() < son.getFather().getIndex())
+                son.getFather().setFb(son.getFather().getFB() + (1 * action));
+            else
+                son.getFather().setFb(son.getFather().getFB() + (-1 * action));
 
-            father = father.getFather();
+            if (son.getFather().getFB() < -1 )
+                left_r(son.getFather());
+            else if (son.getFather().getFB() > 1)
+                right_r(son.getFather());
 
-            if (father.getFB() == 0)
+            son = son.getFather();
+
+            if (son.getFB() == 0)
                 stop = true;
-
-            if (father.getFB() < -1 )
-                left_r(father);
-            else if (father.getFB() > 1)
-                right_r(father);
         }
     }
 
@@ -164,33 +155,11 @@ public class AVL {
         B.setFb(fb_b_novo);
     }
 
-    public void mostrarArvore(No root){
 
-        No aux;
 
-        tree = inOrder(root, true);
-        String arvore = " ";
-        String [][] tree = new String [height(root)+1][tree.size()];
-
-        for (int i=0; i<tree.size(); i++){
-            aux = tree.get(i);
-            tree[depth(aux)][i] = Integer.toString(aux.getElemento());
-        }
-
-        for (int i=0; i<height(root)+1; i++){
-            for (int k=0; k<tree.size(); k++){
-                if (tree[i][k]==null){
-                    arvore+="    ";
-                } else {
-                    arvore+=tree[i][k];
-                    arvore+="    ";
-                }
-            }
-            arvore+="\n";
-        }
-
-        System.out.println(arvore);
-//
-//		return arvore;
+    public void print(){
+        StringBuffer out = new StringBuffer();
+        this.root.printTree(out);
+        System.out.println(out);
     }
 }

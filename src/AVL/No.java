@@ -96,4 +96,38 @@ public class No {
         else
             return 1;
     }
+
+    public void printTree(StringBuffer out){
+        if (right != null) {
+            right.printTree(out, true, "");
+        }
+        printNodeValue(out);
+        if (left != null) {
+            left.printTree(out, false, "");
+        }
+    }
+
+    private void printNodeValue(StringBuffer out){
+        out.append(index+":"+fb);
+        out.append('\n');
+    }
+
+    // use string and not stringbuffer on purpose as we need to change the indent at each recursion
+    private void printTree(StringBuffer out, boolean isRight, String indent){
+        if (right != null) {
+            right.printTree(out, true, indent + (isRight ? "        " : " |      "));
+        }
+        out.append(indent);
+        if (isRight) {
+            out.append(" /");
+        } else {
+            out.append(" \\");
+        }
+        out.append("----- ");
+        printNodeValue(out);
+        if (left != null) {
+            left.printTree(out, false, indent + (isRight ? " |      " : "        "));
+        }
+    }
+
 }

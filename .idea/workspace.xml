@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="860a370c-5f3c-4d52-8237-22de2955f80c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AVL/AVL/AVL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AVL/AVL/AVL.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AVL/AVL/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AVL/AVL/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AVL/AVL/No.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AVL/AVL/No.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AVL/AVL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AVL/AVL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AVL/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AVL/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,6 +79,7 @@
       <option name="presentableId" value="Default" />
       <updated>1565777689559</updated>
       <workItem from="1565784465368" duration="6979000" />
+      <workItem from="1566582336079" duration="1077000" />
     </task>
     <servers />
   </component>

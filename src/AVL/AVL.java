@@ -1,12 +1,9 @@
 package AVL;
 
-import java.util.ArrayList;
-
 public class AVL {
 
     //First No is null
     private No root;
-    ArrayList<No> tree;
 
     //Get and Set of Root
     public No getRoot(){
@@ -110,11 +107,19 @@ public class AVL {
                 son.getFather().setFb(son.getFather().getFB() + (-1 * action));
 
             if (son.getFather().getFB() < -1 ) {
-                System.out.println("esqueda");
-                left_r(son.getFather());
+                if (son.getFB() == -1) {
+                    //System.out.println("esquerda");
+                    left_r(son.getFather());
                 }
-            else if (son.getFather().getFB() > 1)
-                right_r(son.getFather());
+                else if (son.getFB() == 1)
+                    left_2r(son.getFather());
+            }
+            else if (son.getFather().getFB() > 1){
+                if (son.getFB() == 1)
+                    right_r(son.getFather());
+                else if (son.getFB() == -1)
+                    right_2r(son.getFather());
+            }
 
             //son = son.getFather();
 
@@ -157,7 +162,15 @@ public class AVL {
         B.setFb(fb_b_novo);
     }
 
+    private void right_2r(No father){
+        left_r(father);
+        right_r(father);
+    }
 
+    private void left_2r(No father){
+        right_r(father);
+        left_r(father);
+    }
 
     public void print(){
         StringBuffer out = new StringBuffer();

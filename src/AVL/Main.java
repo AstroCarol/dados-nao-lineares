@@ -11,6 +11,7 @@ public class Main {
         avl.insert(5);
         avl.insert(6);
         avl.insert(7);
+        avl.remove(avl.search(7));
         avl.print();
     }
 }

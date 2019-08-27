@@ -37,7 +37,6 @@ public class AVL {
     }
 
     public void remove(No no){
-        No sucessor = 
         if(no.type() == 0) {
             if (no.getIndex() > no.getFather().getIndex()) {
                 no.getFather().setRight(null);
@@ -47,10 +46,7 @@ public class AVL {
                 no.setFather(null);
             }
         }
-        else {
-
-        }
-
+        AttFB(no, -1);
     }
 
     //Functions for searching some No

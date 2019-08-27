@@ -101,13 +101,21 @@ public class AVL {
         while (son.getFather() != null && !stop ){
             //momentos de desespero: checa qual o lado do filho
 
-            if (son.getIndex() < son.getFather().getIndex())
-                son.getFather().setFb(son.getFather().getFB() + (1 * action));
-            else
-                son.getFather().setFb(son.getFather().getFB() + (-1 * action));
+            if(action == 1){
+                if (son.getIndex() < son.getFather().getIndex())
+                    son.getFather().setFb(son.getFather().getFB() + (1 * action));
+                else
+                    son.getFather().setFb(son.getFather().getFB() + (-1 * action));
+            }
+            else if (action == -1){
+                if (son.getIndex() < son.getFather().getIndex())
+                    son.getFather().setFb(son.getFather().getFB() + (-1 * action));
+                else
+                    son.getFather().setFb(son.getFather().getFB() + (1 * action));
+            }
 
             if (son.getFather().getFB() < -1 ) {
-                if (son.getFB() == -1) {
+                if (son.getFB() < 0) {
                     //System.out.println("esquerda");
                     left_r(son.getFather());
                 }
@@ -115,7 +123,7 @@ public class AVL {
                     left_2r(son.getFather());
             }
             else if (son.getFather().getFB() > 1){
-                if (son.getFB() == 1)
+                if (son.getFB() > 0)
                     right_r(son.getFather());
                 else if (son.getFB() == -1)
                     right_2r(son.getFather());

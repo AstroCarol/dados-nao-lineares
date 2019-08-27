@@ -124,6 +124,7 @@ public class AVL {
                 else if (son.getFB() == 1)
                     left_2r(son.getFather());
             }
+
             else if (son.getFather().getFB() > 1){
                 if (son.getFB() > 0)
                     right_r(son.getFather());
@@ -131,10 +132,15 @@ public class AVL {
                     right_2r(son.getFather());
             }
 
-            //son = son.getFather();
 
-            if (son.getFB() == 0)
-                stop = true;
+            if(son.getFather()!=null){
+                if (son.getFB() == 0)
+                    stop = true;
+                son = son.getFather();
+            }else{
+                break;
+            }
+
         }
     }
 

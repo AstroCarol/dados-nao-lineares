@@ -37,6 +37,7 @@ public class AVL {
     }
 
     public void remove(No no){
+        No sucessor = 
         if(no.type() == 0) {
             if (no.getIndex() > no.getFather().getIndex()) {
                 no.getFather().setRight(null);
@@ -49,7 +50,6 @@ public class AVL {
         else {
 
         }
-
 
     }
 
@@ -85,12 +85,18 @@ public class AVL {
     }
 
     public No successor(No no){
-        if (no.getRight().getLeft() == null)
+
+        if (no.type() == 0 || no.getLeft() == null)
+            return no;
+        else
+            return successor(no.getLeft());
+
+        /*if (no.getRight().getLeft() == null)
             return no.getRight();
         else if (no.getRight().getLeft() != null)
             return successor(no.getRight().getLeft());
         else
-            return no;
+            return no;*/
     }
 
     public void AttFB(No son, int action){

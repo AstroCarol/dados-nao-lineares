@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="860a370c-5f3c-4d52-8237-22de2955f80c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AVL/AVL/AVL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AVL/AVL/AVL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AVL/AVL/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AVL/AVL/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AVL/AVL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AVL/AVL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AVL/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AVL/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,12 +22,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1023" />
-    <option name="y" value="311" />
-    <option name="width" value="859" />
-    <option name="height" value="826" />
   </component>
   <component name="ProjectId" id="1PPmkSF362Apk7K0qVsk94Sn5P8" />
   <component name="PropertiesComponent">

@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="860a370c-5f3c-4d52-8237-22de2955f80c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Grafo/Aresta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Grafo/Grafo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Grafo/Vertice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Grafo/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grafo/Grafo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grafo/Grafo.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +44,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main (1)">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Grafo.Main" />
+      <module name="AVL" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Grafo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="AVL.Main" />
       <module name="AVL" />
@@ -61,6 +73,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -78,6 +91,14 @@
       <workItem from="1565784465368" duration="6979000" />
       <workItem from="1566582336079" duration="1077000" />
     </task>
+    <task id="LOCAL-00001" summary="Add inicio de grafo no projeto">
+      <created>1571159830222</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1571159830222</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,6 +130,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add inicio de grafo no projeto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add inicio de grafo no projeto" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

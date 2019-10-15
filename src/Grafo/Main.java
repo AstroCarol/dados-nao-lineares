@@ -5,6 +5,5 @@ public class Main {
         Grafo g = new Grafo();
 
         g.inserirVertice(new Vertice("1", "v1"));
-        g.toString();
     }
 }

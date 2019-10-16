@@ -37,11 +37,12 @@ public class Grafo {
         }
     }
 
-    public void inserirAresta(Vertice inicio, Vertice fim){
+    public Aresta inserirAresta(Vertice inicio, Vertice fim){
         Aresta a = new Aresta(inicio, fim);
         int indice1 = buscar(inicio.getChave());
         int indice2 = buscar(fim.getChave());
         matrizAdj[indice1][indice2] = matrizAdj[indice2][indice1] = a;
+        return a;
     }
 
     public void removerAresta(Vertice inicio, Vertice fim){

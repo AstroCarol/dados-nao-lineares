@@ -1,6 +1,7 @@
 package Grafo;
 
 import java.util.Iterator;
+import java.util.List;
 import java.util.Vector;
 import java.util.ArrayList;
 
@@ -14,9 +15,11 @@ public class Grafo {
         vertices = new Vector();
     }
 
-    public void inserirVertice(Vertice v){
+    public Vertice inserirVertice(String g){
+        Vertice v = new Vertice(g, "");
         vertices.add(v);
         qtdVertices++;
+        return v;
     }
 
     public void removerVertice(Vertice v){
@@ -56,6 +59,10 @@ public class Grafo {
 
     public void removerArestaAdjacente(Vertice inicio, Vertice fim){
 
+    }
+
+    public List<Vertice> getVertice(){
+        return vertices;
     }
 
     private int buscar(String chave){

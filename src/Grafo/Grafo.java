@@ -8,23 +8,33 @@ import java.util.ArrayList;
 
 public class Grafo {
     private int qtdVertices, indice1, indice2;
-    private Vector vertices;
+    private Vector<Vertice> vertices;
+    private Vector<Aresta> arestas;
     private Aresta matrizAdj[][];
     public Grafo(){
-        qtdVertices = 0;
+        arestas = new Vector();
         vertices = new Vector();
     }
 
     public Vertice inserirVertice(String g){
         Vertice v = new Vertice(g, "");
         vertices.add(v);
-        qtdVertices++;
         return v;
     }
 
     public void removerVertice(Vertice v){
-        vertices.remove(v);
-        qtdVertices--;
+
+        for (int i = 0; i < arestas.size(); i++){
+            Aresta temp = arestas.get(i);
+            if (temp.getInicio().equals(v)) {
+                removerAresta(v, null);
+                vertices.remove(v);
+            }
+            else if (temp.getFim().equals(v)){
+                removerAresta(null, v);
+                vertices.remove(v);
+            }
+        }
     }
 
     public void inserirAresta(Vertice inicio, Vertice fim){
@@ -79,7 +89,7 @@ public class Grafo {
 
     public void mostrarVertices(){
         for (int i = 0; i < vertices.size(); i++){
-            System.out.print(vertices.elementAt(i)+",");
+            System.out.print(vertices.get(i).getChave()+",");
         }
     }
 

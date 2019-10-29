@@ -39,9 +39,7 @@ public class Grafo {
 
     public Aresta inserirAresta(Vertice inicio, Vertice fim){
         Aresta a = new Aresta(inicio, fim);
-        int indice1 = buscar(inicio.getChave());
-        int indice2 = buscar(fim.getChave());
-        matrizAdj[indice1][indice2] = matrizAdj[indice2][indice1] = a;
+        arestas.add(a);
         return a;
     }
 

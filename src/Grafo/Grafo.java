@@ -31,26 +31,44 @@ public class Grafo {
     }
 
     public void removerVertice(Vertice v){
-        int i2, j2 = 0;
+        int i = 0 ,i2 = 0;
         ArrayList<Aresta> temp[][];
         temp = new ArrayList<Aresta> [vertices.size -1][vertices.size -1];
-        for (int i = 0; i < vertices.size()-1; i++){
-            i2 = i;
-            if(vertices.indexOf(v) == i){
-                temp[i]
+        int index = vertices.indexOf(v);
+        while (i < vertices.size()-1){
+            if (i == index && i2 == index){
+                i++;
             }
-            for (int j = 0; j < vertices.size()-1; j++){
-                j2 = j;
-                if(vertices.indexOf(v) == j){
+            int j = 0, j2 = 0;
+            while(j == vetices.size()-1){
+                if (j == index && j2 == index){
+                    j++;
 
                 }
+                temp[i2][j2] = matrizAdj[i][j];
+                j++;
+                j2++;
             }
+            i++;
+            i2++;
         }
+        matrizAdj = temp;
     }
 
-    public Aresta inserirAresta(Vertice inicio, Vertice fim){
-        Aresta a = new Aresta(inicio, fim);
-        arestas.add(a);
+    public Aresta inserirAresta(Vertice inicio, Vertice fim, boolean direcao){
+        Aresta a = new Aresta(inicio, fim, direcao);
+        int index = vertices.indexOf(inicio);
+        int index2 = vertices.indexOf(fim);
+        if (!direcao) {
+            if(matrizAdj[index2][index] == null){
+                matrizAdj[index2][index] = new ArrayList<Aresta>();
+            }
+            matrizAdj[index2][index].add(a);
+        }
+        if(matrizAdj[index][index2] == null){
+            matrizAdj[index][index2] = new ArrayList<Aresta>();
+        }
+        matrizAdj[index][index2].add(a);
         return a;
     }
 

@@ -10,29 +10,40 @@ public class Grafo {
     private int qtdVertices, indice1, indice2;
     private Vector<Vertice> vertices;
     private Vector<Aresta> arestas;
-    private Aresta matrizAdj[][];
+    private ArrayList<Aresta> matrizAdj[][];
     public Grafo(){
         arestas = new Vector();
         vertices = new Vector();
     }
 
     public Vertice inserirVertice(String g){
+        ArrayList<Aresta> temp[][];
         Vertice v = new Vertice(g, "");
         vertices.add(v);
+        temp = new ArrayList<Aresta> [vertices.size][vertices.size];
+        for (int i = 0; i < vertices.size; i++) {
+            for (int j = 0; j < vertices.size; j++) {
+                temp[i][j] = matrizAdj[i][j];
+            }
+        }
+        matrizAdj = temp;
         return v;
     }
 
     public void removerVertice(Vertice v){
-
-        for (int i = 0; i < arestas.size(); i++){
-            Aresta temp = arestas.get(i);
-            if (temp.getInicio().equals(v)) {
-                removerAresta(v, null);
-                vertices.remove(v);
+        int i2, j2 = 0;
+        ArrayList<Aresta> temp[][];
+        temp = new ArrayList<Aresta> [vertices.size -1][vertices.size -1];
+        for (int i = 0; i < vertices.size()-1; i++){
+            i2 = i;
+            if(vertices.indexOf(v) == i){
+                temp[i]
             }
-            else if (temp.getFim().equals(v)){
-                removerAresta(null, v);
-                vertices.remove(v);
+            for (int j = 0; j < vertices.size()-1; j++){
+                j2 = j;
+                if(vertices.indexOf(v) == j){
+
+                }
             }
         }
     }
